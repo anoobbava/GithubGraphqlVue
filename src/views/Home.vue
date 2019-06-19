@@ -1,15 +1,15 @@
 <template>
-    <HelloWorld/>
+    <TrendingRepo/>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TrendingRepo from '@/components/TrendingRepo.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    TrendingRepo
   }
 }
 </script>

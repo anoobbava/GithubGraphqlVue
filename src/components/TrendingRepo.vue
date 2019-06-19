@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import { Sample } from '../queries/sample'
+import { trendingRepoDetails } from '../queries/trendingRepoDetailsQuery'
 export default {
   apollo: {
-    repository: Sample
+    repository: trendingRepoDetails
   },
   data () {
     return {
