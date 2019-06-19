@@ -10,7 +10,7 @@ Vue.use(VueApollo)
 const AUTH_TOKEN = 'apollo-token'
 
 // Http endpoint
-const httpEndpoint = 'https://api.graphql.jobs/'
+const httpEndpoint = ' https://api.github.com/graphql'
 
 // Config
 const defaultOptions = {
@@ -35,10 +35,19 @@ const defaultOptions = {
   // cache: myCache
   cache: new InMemoryCache({
     freezeResults: false
-  })
+  }),
 
   // Override the way the Authorization header is set
-  // getAuth: (tokenName) => ...
+  getAuth: () => {
+    // get the authentication token from local storage if it exists
+    const token = process.env.VUE_APP_GITHUB_GRAPHQL_AUTH_TOKEN
+    // return the headers to the context so httpLink can read them
+    if (token) {
+      return 'Bearer ' + token
+    } else {
+      return ''
+    }
+  }
 
   // Additional ApolloClient options
   // apollo: { ... }

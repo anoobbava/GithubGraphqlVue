@@ -1,17 +1,16 @@
 <template>
-  <h3>{{jobs}}</h3>
+  <h3>{{repository.issues}}</h3>
 </template>
 
 <script>
 import { Sample } from '../queries/sample'
-// import gql from 'graphql-tag'
 export default {
   apollo: {
-    jobs: Sample
+    repository: Sample
   },
   data () {
     return {
-      jobs: []
+      repository: []
     }
   }
 }
