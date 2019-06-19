@@ -1,13 +1,11 @@
 <template>
-    <TrendingRepo/>
+  <TrendingRepo />
 </template>
 
 <script>
-// @ is an alias to /src
-import TrendingRepo from '@/components/TrendingRepo.vue'
+import TrendingRepo from '../components/TrendingRepo'
 
 export default {
-  name: 'home',
   components: {
     TrendingRepo
   }
