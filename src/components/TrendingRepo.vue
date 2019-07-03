@@ -35,19 +35,29 @@
   </v-container>
 </template>
 
-
 <script>
-import { trendingRepoDetails } from "../queries/trendingRepoDetailsQuery";
+import { TRENDING_REPO_DETAILS_QUERY } from '../queries/trendingRepoDetailsQuery'
 export default {
-  apollo: {
-    repository: trendingRepoDetails
-  },
-  data() {
+
+  data () {
     return {
-      repository: []
-    };
+      repository: [],
+      owner: '',
+      name: ''
+    }
+  },
+  apollo: {
+    repository: {
+      query: TRENDING_REPO_DETAILS_QUERY,
+      variables () {
+        return {
+          owner: 'octocat',
+          name: 'Hello-World'
+        }
+      }
+    }
   }
-};
+}
 </script>
 
 <style>
