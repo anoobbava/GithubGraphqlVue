@@ -7,13 +7,6 @@ query {
         node {
           title
           url
-          labels(first:5) {
-            edges {
-              node {
-                name
-              }
-            }
-          }
         }
       }
     }

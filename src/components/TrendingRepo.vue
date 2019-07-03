@@ -1,10 +1,19 @@
 <template>
   <v-container grid-list-md text-xs-center>
-    <v-layout row wrap>
-      <v-flex v-for="i in 24" :key="`3${i}`" xs3>
+    <div v-if="$apollo.loading">
+      <v-progress-circular
+      :size="70"
+      :width="7"
+      color="primary"
+      indeterminate
+    ></v-progress-circular>
+
+    </div>
+    <v-layout row wrap v-else>
+      <v-flex v-for="i in repository.issues.edges" :key="i.id" xs3>
         <v-card>
           <v-card-title class="cardColor white--text justify-center">
-            <h2>Repo Name</h2>
+            <h2>{{i.node.title}}</h2>
           </v-card-title>
           <v-avatar
           :size="100"
