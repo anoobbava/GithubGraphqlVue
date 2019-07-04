@@ -19,7 +19,7 @@
           :size="100"
           color="grey lighten-4"
         >
-          <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar">
+          <img :src="i.node.owner.avatarUrl" alt="avatar">
         </v-avatar>
           <v-card-actions class="justify-center">
           <h3>{{i.node.stargazers.totalCount}} <v-icon>visibility</v-icon></h3>

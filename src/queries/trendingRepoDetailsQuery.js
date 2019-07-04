@@ -5,6 +5,9 @@ query SearchMostTop10Star($queryString: String!) {
     edges {
       node {
         ... on Repository {
+          owner {
+            avatarUrl
+          }
           name
           stargazers {
             totalCount
