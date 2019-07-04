@@ -23,7 +23,9 @@
         </v-avatar>
           <v-card-actions class="justify-center">
           <h3>{{i.node.stargazers.totalCount}} <v-icon>visibility</v-icon></h3>
-          <v-btn flat color="primary">View</v-btn>
+          <a v-bind:href="i.node.owner.url" target="_blank">
+            <v-btn flat color="primary">View</v-btn>
+          </a>
           <h3>{{i.node.forks.totalCount}} <v-icon>favorite</v-icon></h3>
         </v-card-actions>
         </v-card>

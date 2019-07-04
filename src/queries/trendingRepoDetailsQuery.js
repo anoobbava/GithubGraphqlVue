@@ -7,6 +7,7 @@ query SearchMostTop10Star($queryString: String!) {
         ... on Repository {
           owner {
             avatarUrl
+            url
           }
           name
           stargazers {
