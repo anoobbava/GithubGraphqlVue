@@ -9,9 +9,10 @@
 
     <v-text-field
       placeholder="please enter the Github Repo name"
+      v-model="searchLanguage"
       ></v-text-field>
 
-    <v-btn icon>
+    <v-btn @click="searchForData" icon>
       <v-icon>search</v-icon>
     </v-btn>
 
@@ -23,9 +24,17 @@
 
 <script>
 export default {
+  data () {
+    return {
+      searchLanguage: ''
+    }
+  },
   methods: {
     redirectToHome () {
       this.$router.push('/')
+    },
+    searchForData () {
+      this.$router.push('/search/'+ this.searchLanguage)
     }
   }
 }
