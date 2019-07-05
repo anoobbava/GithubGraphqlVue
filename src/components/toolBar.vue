@@ -25,10 +25,10 @@
 export default {
   methods: {
     redirectToHome () {
-      this.$router.push('/');
+      this.$router.push('/')
     }
   }
-};
+}
 </script>
 
 <style>
