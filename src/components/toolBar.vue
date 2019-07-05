@@ -1,7 +1,7 @@
 <template>
   <v-toolbar dark color="primary">
     <v-toolbar-title class="white--text">
-      <v-btn icon>
+      <v-btn @click="redirectToHome" icon>
         <v-icon medium>home</v-icon>
       </v-btn>GitHub Graphql
     </v-toolbar-title>
@@ -22,7 +22,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    redirectToHome () {
+      this.$router.push('/');
+    }
+  }
+};
 </script>
 
 <style>
