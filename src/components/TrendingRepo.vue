@@ -38,7 +38,7 @@
 <script>
 import { TRENDING_REPO_DETAILS_QUERY } from '../queries/trendingRepoDetailsQuery'
 export default {
-
+  props: ['searchString'],
   data () {
     return {
       search: [],
@@ -50,7 +50,7 @@ export default {
       query: TRENDING_REPO_DETAILS_QUERY,
       variables () {
         return {
-          queryString: "language:ruby stars:>10000"
+          queryString: 'language:' + this.searchString + ' stars:>10000'
         }
       }
     }

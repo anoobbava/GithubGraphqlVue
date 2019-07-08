@@ -34,7 +34,8 @@ export default {
       this.$router.push('/')
     },
     searchForData () {
-      this.$router.push('/search/'+ this.searchLanguage)
+      this.$router.push('/search/' + this.searchLanguage)
+      this.searchLanguage = ''
     }
   }
 }
