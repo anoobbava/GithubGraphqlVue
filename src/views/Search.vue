@@ -1,10 +1,16 @@
 <template>
-    <h3>Welcome to Search Page {{language}}</h3>
+  <TrendingRepo :searchString="language"/>
 </template>
 
 <script>
+
+import TrendingRepo from '../components/TrendingRepo'
+
 export default {
-  props: ['language']
+  props: ['language'],
+  components: {
+    TrendingRepo
+  }
 }
 </script>
 
